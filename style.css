@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  canvas {
+    
+    border: 1px solid #ccc;
+  }
+  .add{
+    display: flex;
+    justify-content: space-around;
+  }
+  i{
+    cursor: pointer;
+  }
+  .edge{
+    padding-right: 100px;
+    width: 200%;
+  }
+  .doing{
+    margin-right: 5rem;
+    width: 400px;
+    height: 400px;
+  }
+ 

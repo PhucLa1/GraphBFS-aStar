@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Đồ thị có hướng</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+  <div class="edge">
+    <h1>Input</h1>
+    <table id="Input" class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Weight</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+      <p>Instructions: If you want to add a vertex, click inside the rectangular box,
+        To add an edge, enter the start and end points in the Input section on the left,
+        When you want to find a route according to A*, enter the starting point and ending point
+        The input section is in the middle, and click on find, the system will automatically find the path and write down the steps
+        for you
+      </p>
+    </table>
+    <div class="add">
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">@</span>
+        <input id="first" type="text" class="form-control" style="width: 100px;" placeholder="first point"
+          aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">@</span>
+        <input id="last" type="text" class="form-control" style="width: 100px;" placeholder="last point"
+          aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">@</span>
+        <input id="weight" type="text" class="form-control" style="width: 100px;" placeholder="weight"
+          aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <button onclick="newRow()" type="button" class="btn btn-primary">Add New</button>
+    </div>
+
+  </div>
+  <div class="doing">
+    <button onclick="window.location.href = 'http://127.0.0.1:5500/index.html'" type="button" class="btn btn-primary">Home</button>
+    <h2>Website using A* to find the path easiest</h2>
+    <canvas id="graph" width="400" height="400"></canvas>
+    <div style="display: flex;" class="start-end">
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">@</span>
+        <input id="start" type="text" class="form-control" style="width: 100px;" placeholder="Start Goal"
+          aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">@</span>
+        <input id="end" type="text" class="form-control" style="width: 100px;" placeholder="End Goal"
+          aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+    </div>
+    <button style="margin-left: 9rem;" onclick="findAStar()" type="button" class="btn btn-primary">Find the path</button>
+    <h1 id="path">The path is : </h1>
+  </div>
+
+  <div class="edge">
+    <h1>Output</h1>
+    <table style="width: 150%;" id="Output" class="table">
+      <thead>
+        <tr>
+          <th scope="col">Expanded Node</th>
+          <th scope="col">Adjacency list</th>
+          <th scope="col">k(u,v)</th>
+          <th scope="col">h(v)</th>
+          <th scope="col">g(v)</th>
+          <th scope="col">f(v)</th>
+          <th scope="col">List L</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="A.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
