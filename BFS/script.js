@@ -254,34 +254,3 @@ function deleteEdge(first,last){
 canvas.addEventListener('click', handleClick);
 drawGraph();
 
-
-const graphA = new GraphA();
-graphA.addVertex('A', 14);
-graphA.addVertex('B', 0);
-graphA.addVertex('C', 15);
-graphA.addVertex('D', 6);
-graphA.addVertex('E', 8);
-graphA.addVertex('F', 7);
-graphA.addVertex('G', 12);
-graphA.addVertex('I', 4);
-graphA.addVertex('K', 2);
-graphA.addVertex('H', 10);
-
-
-graphA.addEdge('A', 'C', 9);
-graphA.addEdge('A', 'D', 7);
-graphA.addEdge('A', 'E', 13);
-graphA.addEdge('A', 'F', 20);
-graphA.addEdge('F', 'G', 4);
-graphA.addEdge('F', 'I', 6);
-graphA.addEdge('E', 'K', 4);
-graphA.addEdge('E', 'I', 3);
-graphA.addEdge('I', 'K', 9);
-graphA.addEdge('H', 'K', 5);
-graphA.addEdge('C', 'H', 6);
-graphA.addEdge('K', 'B', 6);
-graphA.addEdge('I', 'B', 5);
-graphA.addEdge('D', 'H', 8);
-graphA.addEdge('D', 'E', 4);
-const result = graphA.aStar('A', 'B');
-console.log(result);

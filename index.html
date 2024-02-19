@@ -14,13 +14,16 @@
     <div>
         <button onclick="direct(1)"  type="button" class="btn btn-primary">BFS Algorithms</button>
         <button onclick="direct(2)"  type="button" class="btn btn-primary">A* Algorithms</button>
+        <button onclick="direct(3)"  type="button" class="btn btn-primary">BestFS Algorithms</button>
     </div>
     <script>
         function direct(page){
             if(page==1){
                 window.location.href = 'http://127.0.0.1:5500/BFS/index.html'
-            }else{
+            }else if(page==2){
                 window.location.href = 'http://127.0.0.1:5500/aStar/index.html'
+            }else{
+                window.location.href = 'http://127.0.0.1:5500/bestFS/index.html'
             }
         }
     </script>

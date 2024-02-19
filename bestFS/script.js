@@ -5,7 +5,7 @@ let vertices = [];
 let edges = [];
 let vertexName = [];
 let weightsVertex = []
-const graphA = new GraphA();
+const graphA = new BestFS();
 
 function isPairDuplicate(edges, pair) {
     for (let i = 0; i < edges.length; i++) {
@@ -47,13 +47,6 @@ function drawGraph() {
         ctx.stroke();
 
         drawArrowhead(ctx, start.x, start.y, end.x, end.y); // Thêm mũi tên chỉ hướng của cạnh
-
-        const weightX = (start.x + end.x) / 2;
-        const weightY = (start.y + end.y) / 2;
-        ctx.fillStyle = 'black';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(edge[2].toString(), weightX, weightY);
     });
 }
 
@@ -139,19 +132,17 @@ function addVertex(event) {
 function newRow() {
     let first = document.querySelector('#first').value
     let last = document.querySelector('#last').value
-    let weight = parseInt(document.querySelector('#weight').value)
     const newPair = [first, last];
     if (handleError(first, last, 0) == true) {
         first = first.toString();
         last = last.toString();
-        edges.push([first, last,weight]);
-        graphA.addEdge(first,last,weight);
+        edges.push([first, last]);
+        graphA.addEdge(first,last);
         showTable();
         drawGraph()
     }
     document.querySelector('#first').value = '';
     document.querySelector('#last').value = ''
-    document.querySelector('#weight').value = ''
 }
 function showTable(){
     const tableBody = document.querySelector('#Input tbody');
@@ -162,7 +153,6 @@ function showTable(){
         <th>${index+1}</th>
         <td>${edge[0]}</td>
         <td>${edge[1]}</td>
-        <td>${edge[2]}</td>
         <td><i onclick="deleteEdge('${edge[0].toString()}','${edge[1].toString()}')" class="fa-solid fa-trash"></i></td>
       `;
       tableBody.appendChild(newRow);
@@ -243,7 +233,7 @@ function findAStar() {
         document.querySelector('#Output tbody').innerHTML = '';
         start = start.toString();
         end = end.toString();
-        document.getElementById('path').innerHTML = graphA.aStar(start, end)
+        document.getElementById('path').innerHTML = graphA.bestFS(start, end)
     }
 }
 function deleteEdge(first,last){
@@ -267,37 +257,3 @@ function deleteEdge(first,last){
 }
 canvas.addEventListener('click', handleClick);
 drawGraph();
-
-
-//const graphA = new GraphA();
-// graphA.addVertex('A', 14);
-// graphA.addVertex('B', 0);
-// graphA.addVertex('C', 15);
-// graphA.addVertex('D', 6);
-// graphA.addVertex('E', 8);
-// graphA.addVertex('F', 7);
-// graphA.addVertex('G', 12);
-// graphA.addVertex('I', 4);
-// graphA.addVertex('K', 2);
-// graphA.addVertex('H', 10);
-
-
-
-
-// graphA.addEdge('A', 'C', 9);
-// graphA.addEdge('A', 'D', 7);
-// graphA.addEdge('A', 'E', 13);
-// graphA.addEdge('A', 'F', 20);
-// graphA.addEdge('F', 'G', 4);
-// graphA.addEdge('F', 'I', 6);
-// graphA.addEdge('E', 'K', 4);
-// graphA.addEdge('E', 'I', 3);
-// graphA.addEdge('I', 'K', 9);
-// graphA.addEdge('H', 'K', 5);
-// graphA.addEdge('C', 'H', 6);
-// graphA.addEdge('K', 'B', 6);
-// graphA.addEdge('I', 'B', 5);
-// graphA.addEdge('D', 'H', 8);
-// graphA.addEdge('D', 'E', 4);
-// const result = graphA.aStar('A', 'B');
-// console.log(result);
