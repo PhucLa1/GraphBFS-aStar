@@ -123,7 +123,7 @@ function addVertex(event) {
         weightsVertex[`${name.toString()}`] = parseInt(weight)
         //console.log(vertexName)
         vertices.push({ x: mouseX, y: mouseY, name: `${name.toString()}` });
-        graphA.addVertex(name.toString(),weight);
+        graphA.addVertex(name.toString(),parseInt(weight));
         //console.log(vertices.length - 1)
         drawGraph();
     }

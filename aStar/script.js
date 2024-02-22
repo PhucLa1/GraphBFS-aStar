@@ -130,7 +130,7 @@ function addVertex(event) {
         weightsVertex[`${name.toString()}`] = parseInt(weight)
         //console.log(vertexName)
         vertices.push({ x: mouseX, y: mouseY, name: `${name.toString()}` });
-        graphA.addVertex(name.toString(),weight);
+        graphA.addVertex(name.toString(),parseInt(weight));
         //console.log(vertices.length - 1)
         drawGraph();
     }
@@ -270,34 +270,36 @@ drawGraph();
 
 
 //const graphA = new GraphA();
-// graphA.addVertex('A', 14);
-// graphA.addVertex('B', 0);
-// graphA.addVertex('C', 15);
-// graphA.addVertex('D', 6);
-// graphA.addVertex('E', 8);
-// graphA.addVertex('F', 7);
-// graphA.addVertex('G', 12);
-// graphA.addVertex('I', 4);
-// graphA.addVertex('K', 2);
-// graphA.addVertex('H', 10);
+/*
+graphA.addVertex('A', 12);
+graphA.addVertex('B', 11);
+graphA.addVertex('C', 6);
+graphA.addVertex('D', 8);
+graphA.addVertex('E', 7);
+graphA.addVertex('F', 10);
+graphA.addVertex('G', 2);
+graphA.addVertex('I', 0);
+//graphA.addVertex('K', 2);
+graphA.addVertex('H', 4);
 
 
 
 
-// graphA.addEdge('A', 'C', 9);
-// graphA.addEdge('A', 'D', 7);
-// graphA.addEdge('A', 'E', 13);
-// graphA.addEdge('A', 'F', 20);
-// graphA.addEdge('F', 'G', 4);
-// graphA.addEdge('F', 'I', 6);
-// graphA.addEdge('E', 'K', 4);
-// graphA.addEdge('E', 'I', 3);
-// graphA.addEdge('I', 'K', 9);
-// graphA.addEdge('H', 'K', 5);
-// graphA.addEdge('C', 'H', 6);
-// graphA.addEdge('K', 'B', 6);
-// graphA.addEdge('I', 'B', 5);
-// graphA.addEdge('D', 'H', 8);
-// graphA.addEdge('D', 'E', 4);
-// const result = graphA.aStar('A', 'B');
-// console.log(result);
+graphA.addEdge('A', 'B', 10);
+graphA.addEdge('A', 'C', 7);
+graphA.addEdge('A', 'D', 13);
+graphA.addEdge('A', 'E', 19);
+graphA.addEdge('B', 'F', 6);
+graphA.addEdge('C', 'F', 8);
+graphA.addEdge('C', 'D', 4);
+graphA.addEdge('D', 'G', 4);
+graphA.addEdge('D', 'H', 3);
+graphA.addEdge('E', 'H', 6);
+graphA.addEdge('F', 'G', 5);
+graphA.addEdge('G', 'I', 6);
+graphA.addEdge('H', 'G', 9);
+graphA.addEdge('H', 'I', 6);
+//graphA.addEdge('D', 'E', 4);
+const result = graphA.aStar('A', 'I');
+console.log(result);
+*/
